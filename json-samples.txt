@@ -1,0 +1,472 @@
+* Batch
+  - Retrieve Batch
+    > URL: [GET] http://localhost:8801/batches/B202200001
+    > JSON
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "RETRIEVE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {                   
+            "batchId": "B202200001",
+            "batchCd": null,
+            "batchParams": null,
+            "batchDesc": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Retrieve BatchList
+    > URL: [GET] http://localhost:8801/batches/
+    > JSON
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "FIND_ALL",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "searchCriteria": {
+            "searchItem": {
+                            "batchId": null,
+                            "batchCd": null,
+                            "batchParams": null,
+                            "batchDesc": null
+            },
+            "currentPageNo": 1,
+            "itemsPerPage": 10,
+            "totalItemCount": 0,
+            "totalPageCount": 0
+        },
+        "itemList": []
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+  
+  - Register Batch
+    > URL: [POST] http://localhost:8801/batches/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "REGISTER",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+            "batchId": null,
+            "batchCd": "B00005",
+            "batchParams": "key1=value1;key2=value2;key3=value3",
+            "batchDesc": "데이터 이동 배치x"
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Modify Batch
+    > URL: [PUT] http://localhost:8801/batches/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "MODIFY",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+            "batchId": "B202200007",
+            "batchCd": "ba7899",
+            "batchParams": "key1=val2;key2=val3",
+            "batchDesc": "연습용.배치2"
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+  - Delete Batch
+    > URL: [DELETE] http://localhost:8801/batches/B202200008
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "DELETE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {               
+            "batchId": "B202200008",
+            "batchCd": null,
+            "batchParams": null,
+            "batchDesc": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+* BatchServer
+  - Retrieve BatchServer
+    > URL: [GET] http://localhost:8801/batch-servers/S202200001
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "RETRIEVE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+            "serverId": "S202200001",
+            "serverName": null,
+            "serverProtocol": null,
+            "serverDomain": null,
+            "serverPort": null,
+            "serverCtxt": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Retrieve BatchServerList
+    > URL: [GET] http://localhost:8801/batch-servers/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "FIND_ALL",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "searchCriteria": {
+            "searchItem": {
+                "serverId": null,
+                "serverName": null,
+                "serverProtocol": "http",
+                "serverDomain": "localhost",
+                "serverPort": 0,
+                "serverCtxt": null
+            },
+            "currentPageNo": 1,
+            "itemsPerPage": 10,
+            "totalItemCount": 0,
+            "totalPageCount": 0
+        },
+        "itemList": []
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Register BatchServer
+    > URL: [POST] http://localhost:8801/batch-servers/
+    > JSON: 
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "REGISTER",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+            "serverId": null,
+            "serverName": "executor1",
+            "serverProtocol": "http",
+            "serverDomain": "localhost",
+            "serverPort": "8802",
+            "serverCtxt": "/"
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Modify BatchServer
+    > URL: [PUT] http://localhost:8801/batch-servers/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "MODIFY",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+            "serverId": "S202200010",
+            "serverName": null,
+            "serverProtocol": "https",
+            "serverDomain": null,
+            "serverPort": 9999,
+            "serverCtxt": "/nomore"
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Delete BatchServer
+    > URL: [DELETE] http://localhost:8801/batch-servers/S202200024
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "DELETE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+            "serverId": "S202200024",
+            "serverName": null,
+            "serverProtocol": null,
+            "serverDomain": null,
+            "serverPort": null,
+            "serverCtxt": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+    
+* BatchSchedule
+  - Retrieve BatchSchedule
+    > URL: [GET] http://localhost:8801/batch-schedules/P202200001
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "RETRIEVE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+                      "scheduleId": "P202200001",
+            "serverId": null,
+                      "batchId": null,
+                      "cronExpr": null,
+                      "confirmYn": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Retrieve BatchScheduleList
+    > URL: [GET] http://localhost:8801/batch-schedules/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "FIND_ALL",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "searchCriteria": {
+            "searchItem": {
+                            "scheduleId": null,
+                            "serverId": null,
+                            "batchId": null,
+                            "cronExpr": null,
+                            "confirmYn": "Y"
+            },
+            "currentPageNo": 1,
+            "itemsPerPage": 10,
+            "totalItemCount": 0,
+            "totalPageCount": 0
+        },
+        "itemList": []
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Register BatchSchedule
+    > URL: [POST] http://localhost:8801/batch-schedules/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "REGISTER",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+                      "scheduleId": null,
+            "serverId": "S202200008",
+                      "batchId": "B202200017",
+                      "cronExpr": "0/7 * * * * *",
+                      "confirmYn": "N"
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Modify BatchSchedule
+    > URL: [PUT] http://localhost:8801/batch-schedules/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "MODIFY",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+                      "scheduleId": "P202200003",
+            "serverId": "S202200008",
+                      "batchId": "B202200017",
+                      "cronExpr": "1 * 3 4 5",
+                      "confirmYn": "Y"
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - executeOnce
+    > URL: [PUT] http://localhost:8801/batch-schedules/executeOnce/
+    > JSON: 
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "EXECUTE_ONCE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+                      "scheduleId": "P202200001",
+            "serverId": null,
+                      "batchId": null,
+                      "cronExpr": null,
+                      "confirmYn": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - pause
+    > URL: [PUT] http://localhost:8801/batch-schedules/pause/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "PAUSE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+                      "scheduleId": "P202200001",
+            "serverId": null,
+                      "batchId": null,
+                      "cronExpr": null,
+                      "confirmYn": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - resume
+    > URL: [PUT] http://localhost:8801/batch-schedules/resume/
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "RESUME",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+                      "scheduleId": "P202200001",
+            "serverId": null,
+                      "batchId": null,
+                      "cronExpr": null,
+                      "confirmYn": null
+        }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
+
+  - Delete BatchSchedule
+    > URL: [DELETE] http://localhost:8801/batch-schedules/P202200001
+    > JSON:
+{
+    "header": {
+        "iid": "I_ID",
+        "name": "DELETE",
+        "rqUuid": "4923fff2-b5f5-4f2e-a715-66632028d20c",
+        "rsUuid": null
+    },
+    "body": {
+        "item": {
+                      "scheduleId": "P202200001",
+            "serverId": null,
+                      "batchId": null,
+                      "cronExpr": null,
+                      "confirmYn": null
+                }
+    },
+    "result": {
+        "errCode": "00000",
+        "message": null
+    }
+}
